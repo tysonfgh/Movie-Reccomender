@@ -2,9 +2,9 @@ import streamlit as st
 import pickle as pkl
 import pandas as pd
 import requests as r
-movies_dict=pkl.load(open('movies_dict1.pkl','rb'))
+movies_dict=pkl.load(open('Movie_Recoomender_System/movies_dict1.pkl','rb'))
 m=pd.DataFrame(movies_dict)
-similarity=pkl.load(open('similarity.pkl','rb'))
+similarity=pkl.load(open('Movie_Recoomender_System/similarity.pkl','rb'))
 def fetch_posters(mid):
     response=r.get("https://api.themoviedb.org/3/movie/{}?api_key=8265bd1679663a7ea12ac168da84d2e8&language=en-US".format(mid),verify=False)
     data=response.json()
